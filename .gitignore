@@ -1,0 +1,38 @@
+### Jupyter Notebook cache and checkpoints
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/* 
+
+### Exclude the core notebook file from public tracking
+
+Source_Code.ipynb 
+
+### Python temporary and compilation files
+
+**pycache**/
+*.py[cod]
+*$py.class 
+
+### Project specific local data files
+
+spectrum_data.dat 
+
+### Sample CSV and JSON data files
+
+california_housing_train.csv
+mnist_test.csv
+anscombe.json 
+
+### Environment configuration files
+
+config_default 
+
+### IDEs and editors configurations
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
