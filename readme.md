@@ -6,6 +6,9 @@ The **High-Frequency Wireless Spectrum Grid & Bandwidth Manager** is an Electron
 To bridge software with physical ECE environments without external hardware dependencies, the engine integrates a **real-time hardware telemetry link**. It directly samples the host system's hardware execution layer (microsecond processing clock jitter and garbage collection heap sizes) during usage routines. These dynamic computational metrics are mathematically mapped into real-time RF data points—specifically **Signal-to-Noise Ratio (SNR)** and **Channel Congestion** percentages. Built with defensive error trapping, the system maintains strict thread safety and prevents runtime processing failures.
 
 ## Features
+* **Operator Authentication Gate:** Secure terminal login subsystem restricting configuration parameters to verified network operators using an attempt-limited conditional authentication loop.
+* **Persistent Binary Storage Serialization:** Integrated low-level machine file operations via Python’s `pickle` framework, shifting the system state from temporary runtime RAM into a persistent, unreadable local binary tracking datablock (`spectrum_data.dat`).
+* **High-Availability Geolocation HTTPS Sync Pipeline:** An automated data ingestion routine that queries secure developer-sandbox servers (`https://httpbin.org`) over HTTPS to extract host routing configurations, dynamically converting machine metrics into active geospatial nodes.
 * **RF Infrastructure Registry (Admin):** Allows network managers to initialize wireless nodes or satellite arrays with specific total channel capacities and licensing fees.
 * **Dynamic Hardware Telemetry Integration:** Native system sampling loops that query CPU time-slice jitter and memory load arrays, converting them into live **SNR (dB)** and **Congestion (%)** matrix feeds.
 * **Bandwidth Provisioning Module:** An interface enabling communications subsystems or field engineers to instantly check real-time channel balances and secure frequency slices.
@@ -42,6 +45,8 @@ To evaluate the integrity rules and real-time execution parameters of the spectr
 3. **Test Case 3 (Bandwidth Allocation):** Proceed within option `2`. Input target Node ID `5G-TEST`, pass your engineer handle name, and specify a slice requirement of `5` channels. Verify that the system provides the accurate dollar balance assessment and prints an 8-character session token.
 4. **Test Case 4 (Grid Capacity Validation):** Re-enter option `2`. Try to provision an impossible slice quantity of `40` channels for node `5G-TEST`. The transaction should be safely blocked with a clear warning explaining that inventory bounds have been breached.
 5. **Test Case 5 (Session De-provisioning):** Select option `3`. Input the exact 8-character auth token created during Test Case 3. Confirm that the application removes the connection index logs and returns the 5 channel slots to the open transceiver grid.
+6. **Test Case 6 (Security and Persistent Recovery Validation):** Launch the terminal dashboard. Input incorrect login credentials three times to verify system lock structures. Reboot the code, enter correct operator parameters (`admin` / `ece123`), register a temporary custom cell base-station node, and shut down the system. Re-launch the program; inspect the matrix table using option 2 to confirm the custom node successfully persisted inside the binary datablock across restarts.
+
 
 ## Screenshots
 ### Real-Time Infrastructure Grid Readout Matrix
