@@ -1,0 +1,11 @@
+### All the modules used are in-built in python. Some modules are User-Defined Functions
+### In-Built Modules used
+1.uuid
+2.time
+3.random
+4.sys
+5.gc
+6.pickle
+7.os
+8.urllib.request
+9.json*
